@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizCodeQuest</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee&family=Jersey+15&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/quiz.css">
+</head>
+<body>
+    <div id="game-container" class="game_space">
+        <div class="navbar">
+            <h1>QUIZ CODE QUEST</h1> 
+        </div>
+        <!-- Start Screen -->
+         <!-- <h1>WELCOME TO QUIZ CODE QUEST</h1> -->
+        <div id="start-screen">
+            <!-- <h1>Welcome to TechArcade!</h1> -->
+            <!-- <p>Select a category to begin:</p> -->
+            <!-- <div id="category-buttons"></div> -->
+
+            <div class="card" id="js" onclick="startGame('JavaScript')">
+                <img src="/images/js.png" alt="" width="150px">
+                 <div class="card__content">
+                   <p class="card__title">JAVASCRIPT
+                   </p><p class="card__description">JavaScript is a versatile, high-level programming language primarily used for creating interactive web applications. Known for its dynamic and flexible nature, it powers the logic behind web browsers and enables features like animations, dynamic content updates, and user interactions.</p>
+                 </div>
+               </div>
+             
+               
+             
+               <div class="card" id="c" onclick="startGame('C')">
+                 <img src="/images/c.png" alt="" width="150px">
+                 <div class="card__content">
+                   <p class="card__title">C
+                   </p><p class="card__description">C is a powerful, general-purpose programming language known for its efficiency and performance. It is widely used for system-level programming, embedded systems, and applications requiring low-level hardware interaction. Learning C builds a strong foundation for understanding core programming concepts.</p>
+                 </div>
+               </div>
+               
+   
+             
+               <div class="card" id="cpp" onclick="startGame('Cpp')">
+                 <img src="/images/c-.png" alt="" width="150px">
+                 <div class="card__content">
+                   <p class="card__title">C++
+                   </p><p class="card__description">C++ is an extension of C that incorporates object-oriented programming principles. It is commonly used for developing high-performance software, game engines, and real-time simulations. Its versatility makes it a preferred choice for competitive programming.</p>
+                 </div>
+               </div>
+               
+   
+          
+               <div class="card" id="java" onclick="startGame('Java')">
+                 <img src="/images/java.png" alt="" width="150px">
+                 <div class="card__content">
+                   <p class="card__title">JAVA
+                   </p><p class="card__description">  </p>
+                 </div>
+               </div>
+                
+               <div class="card" id="ts" onclick="startGame('TypeScript')"> 
+                   <img src="/images/typescript.png" alt="" width="150px">
+                   <div class="card__content">
+                     <p class="card__title">TYPESCRIPT
+                     </p><p class="card__description">TypeScript is a superset of JavaScript that introduces static typing and advanced features, making code more predictable and maintainable. It is ideal for large-scale applications and is often used with modern frameworks like Angular for building complex web applications.</p>
+                   </div>
+                 </div>
+
+               <div class="card" id="python" onclick="startGame('Python')">
+                   <img src="/images/python.png" alt="" width="150px">
+                   <div class="card__content">
+                     <p class="card__title">PYTHON
+                     </p><p class="card__description">Python is a general-purpose programming language that's used to build software, websites, and analyze data. It's known for being easy to learn and use, and is used in many different fields. </p>
+                   </div>
+                 </div>
+        </div>
+
+        <!-- Category Selection Screen -->
+       <div class="category">
+        <div id="category-screen" class="hidden">
+            <h2 id="category-title"></h2>
+            <p>Select a level:</p>
+            <button onclick="selectLevel('Beginner')">Beginner</button>
+            <button onclick="selectLevel('Intermediate')">Intermediate</button>
+            <button onclick="selectLevel('Pro')">Pro</button>
+        </div>
+       </div>
+
+       <div class="quizdiv">
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="hidden">
+            <h2 id="question-title"></h2>
+            <p id="timer">Time Left: <span id="time">10</span>s</p>
+            <ul id="question-options"></ul>
+        </div>
+       </div>
+
+        <!-- Final Score Screen -->
+        <div id="result-screen" class="hidden">
+            <h2>Your Final Score:</h2>
+            <h1 id="final-score"></h1>
+            <button onclick="restartGame()">Play Again</button>
+        </div>
+
+        <!-- <footer>
+            <div class="footer-content">
+                <h3>TechArcade</h3>
+                <p>made with love</p>
+                <ul class="socials">
+                    <li><img src="instagram.png" class="social"></li>
+                    <li><img src="social.png" class="social"></a></li>
+                    <li><img src="linkedin.png" class="social"></a></li>
+                    <li><img src="twitter.png" class="social"></a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                    <p>copyright &copy;2024 TechArcade.</p>
+        </footer> -->
+    </div>
+
+    <script src="/js/quiz.js"></script>
+</body>
+</html>

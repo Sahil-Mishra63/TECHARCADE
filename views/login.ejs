@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <!-- <div class="form-container">
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="Email" id="email" placeholder="Enter your Email" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/signup">Signup</a></p>
+    </div> -->
+
+    <!-- <p>login works!</p> -->
+    <div class="container">
+        <div class="box">
+            <span class="borderLine"></span>
+            <form action="/login" method="post">
+                <h2>Sign in</h2>
+                <div class="inputBox">
+                    <input type="text" required name="email">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required name="password">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <!-- <a href="#">Forgot Password</a> -->
+                    <p style="color: yellowgreen; display:flex; align-items:center; margin-left:50px;">Don't have an account?</p><a href="/signup" style="color: yellow;">Signup</a>
+                </div>
+                <input type="submit" class="submit-btn" id="submit" value="Login">
+            </form>
+        </div>
+        </div>
+
+</body>
+</html>

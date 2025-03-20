@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechArcade</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee&family=Jersey+15&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="total_container">
+        <div class="navbar">
+            <button class="clickables btn" onclick="navigate('/keysprint_home')">SPEED TYPING</button>
+            <button class="clickables btn" onclick="navigate('/quiz')">TECH QUIZ</button>
+            <button class="clickables btn" onclick="navigate('/output')">GUESS THE OUTPUT</button>
+            <button class="clickables btn">OTHERS</button>
+        </div>
+
+        <div class="game_space">
+            <div class="card" onclick="navigate('/keysprint_home')">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                     <img src="/images/KEYSPRINT.png" alt="" width="185px">
+                      <strong>KeySprint</strong>
+                    </div>
+                  </div>
+                  <div class="front">
+                    
+                    <div class="img">
+                      <div class="circle">
+                      </div>
+                      <div class="circle" id="right">
+                      </div>
+                      <div class="circle" id="bottom">
+                      </div>
+                    </div>
+              
+                    <div class="front-content">
+                      <small class="badge">MEDIUM</small>
+                      <div class="description">
+                        <div class="title">
+                          <p class="title">
+                            <strong>KEYSPRINT</strong>
+                          </p>
+                          <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+                        </div>
+                        <p class="card-footer">
+                          let's see how fast you are
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card" onclick="navigate('/quiz-home')">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                      <img src="/images/QUIZCODEQUEST.png" alt="" width="185px">
+                      <strong>Quiz Code Quest</strong>
+                    </div>
+                  </div>
+                  <div class="front">
+                    
+                    <div class="img">
+                      <div class="circle">
+                      </div>
+                      <div class="circle" id="right">
+                      </div>
+                      <div class="circle" id="bottom">
+                      </div>
+                    </div>
+              
+                    <div class="front-content">
+                      <small class="badge">MEDIUM</small>
+                      <div class="description">
+                        <div class="title">
+                          <p class="title">
+                            <strong>QUIZ CODE QUEST</strong>
+                          </p>
+                          <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+                        </div>
+                        <p class="card-footer">
+                          challenge yourself with some quizes
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card" onclick="navigate('/output-home')">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                      <img src="/images/OUTPUT ODYSSEY.png" alt="" width="183px">
+                      <strong>Output Odyssey</strong>
+                    </div>
+                  </div>
+                  <div class="front">
+                    
+                    <div class="img">
+                      <div class="circle">
+                      </div>
+                      <div class="circle" id="right">
+                      </div>
+                      <div class="circle" id="bottom">
+                      </div>
+                    </div>
+              
+                    <div class="front-content">
+                      <small class="badge">MEDIUM</small>
+                      <div class="description">
+                        <div class="title">
+                          <p class="title">
+                            <strong>OUTPUT ODYSSEY</strong>
+                          </p>
+                          <svg fill-rule="nonzero" height="15px" width="15px" viewBox="0,0,256,256" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g style="mix-blend-mode: normal" text-anchor="none" font-size="none" font-weight="none" font-family="none" stroke-dashoffset="0" stroke-dasharray="" stroke-miterlimit="10" stroke-linejoin="miter" stroke-linecap="butt" stroke-width="1" stroke="none" fill-rule="nonzero" fill="#20c997"><g transform="scale(8,8)"><path d="M25,27l-9,-6.75l-9,6.75v-23h18z"></path></g></g></svg>
+                        </div>
+                        <p class="card-footer">
+                          JUST FIND THE OUPUT OF THE CODE
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <h3>TechArcade</h3>
+                <p>made with love</p>
+                <ul class="socials">
+                    <li><img src="/images/instagram.png" class="social"></li>
+                    <li><img src="/images/social.png" class="social"></a></li>
+                    <li><img src="/images/linkedin.png" class="social"></a></li>
+                    <li><img src="/images/twitter.png" class="social"></a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                    <p>copyright &copy;2024 TechArcade.</p>
+        </footer>
+    </div>
+
+
+
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

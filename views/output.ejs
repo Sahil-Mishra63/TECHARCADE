@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OUTPUT ODYSEY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Orbitron:wght@400..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/output.css">
+</head>
+<body>
+    <!-- <div class="container">
+        <h1>TechArcade - Guess the Output</h1>
+        <div class="category-container">
+            <button class="category-btn" onclick="displayQuestion('c')">C</button>
+            <button class="category-btn" onclick="dispplayQuestion('cpp')">C++</button>
+            <button class="category-btn" onclick="displayQuestion('java')">Java</button>
+            <button class="category-btn" onclick="displayQuestion('python')">Python</button>
+        </div>
+        <div id="questions-container">
+            <h2 id="question-title"></h2>
+            <p id="timer">Time left: <span id="time">30</span>s</p>
+            <input type="text" id="input">
+            <button class="next" id="next">next</button>
+        </div>
+        <div id="result-container"></div>
+    </div> -->
+    <div class="container">
+        <div class="top">
+            <h1>OUTPUT ODYSSEY</h1>
+        </div>
+        <div class="tech-content">
+            <div class="card" onclick="displayQuestion('c')">
+                <img src="/images/c.png" alt="">
+                <div class="card__content">
+                  <p class="card__title">C</p>
+                  <p class="card__description">C is a powerful, general-purpose programming language known for its efficiency and performance. It is widely used for system-level programming, embedded systems, and applications requiring low-level hardware interaction. Learning C builds a strong foundation for understanding core programming concepts.</p>
+                </div>
+            </div>  
+            <div class="card">
+                <img src="/images/c-.png" alt="">
+                <div class="card__content">
+                  <p class="card__title">C++</p>
+                  <p class="card__description">C++ is an extension of C that incorporates object-oriented programming principles. It is commonly used for developing high-performance software, game engines, and real-time simulations. Its versatility makes it a preferred choice for competitive programming.</p>
+                </div>
+            </div>  
+            <div class="card">
+                <img src="/images/java.png" alt="">
+                <div class="card__content">
+                  <p class="card__title">JAVA</p>
+                  <p class="card__description">Java is a platform-independent, object-oriented language popular for building robust, scalable, and secure applications. Widely used in enterprise software, mobile development (especially Android), and backend systems, Java is valued for its portability and rich ecosystem.</p>
+                </div>
+            </div>  
+            <div class="card">
+                <img src="/images/js.png" alt="">
+                <div class="card__content">
+                  <p class="card__title">JAVASCRIPT</p>
+                  <p class="card__description">JavaScript is a versatile, high-level programming language primarily used for creating interactive web applications. Known for its dynamic and flexible nature, it powers the logic behind web browsers and enables features like animations, dynamic content updates, and user interactions.</p>
+                </div>
+            </div>  
+            <div class="card">
+                <img src="images/python.png" alt="" width="100%">
+                <div class="card__content">
+                  <p class="card__title">PYTHON</p>
+                  <p class="card__description">Python is a general-purpose programming language that's used to build software, websites, and analyze data. It's known for being easy to learn and use, and is used in many different fields. </p>
+                </div>
+            </div>  
+            <div class="card">
+                <img src="/images/typescript.png" alt="">
+                <div class="card__content">
+                  <p class="card__title">TYPESCRIPT</p>
+                  <p class="card__description">TypeScript is a superset of JavaScript that introduces static typing and advanced features, making code more predictable and maintainable. It is ideal for large-scale applications and is often used with modern frameworks like Angular for building complex web applications.</p>
+                </div>
+            </div>  
+        </div>
+
+        <div class="questions" >
+            
+        </div>
+
+        <div class="result">
+
+        </div>
+    </div>
+
+
+    <script src="/js/output.js"></script>
+</body>
+</html>
