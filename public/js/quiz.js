@@ -237,15 +237,6 @@ const categories = {
 
 };
 
-// function generateCategoryButtons() {
-//     const categoryButtons = document.getElementById('category-buttons');
-//     Object.keys(categories).forEach(category => {
-//         const button = document.createElement('button');
-//         button.textContent = category;
-//         button.onclick = () => startGame(category);
-//         categoryButtons.appendChild(button);
-//     });
-// }
 
 function startGame(category) {
     currentCategory = category;
@@ -327,6 +318,7 @@ function showResult() {
     document.getElementById('quiz-screen').classList.add('hidden');
     document.getElementById('result-screen').classList.remove('hidden');
     document.getElementById('final-score').textContent =` ${score} / ${questions.length}`;
+    saveQuizScore(currentCategory, score);
 }
 
 function restartGame() {
@@ -342,3 +334,19 @@ function restartGame() {
 }
 
 generateCategoryButtons();
+
+function saveQuizScore(language, score) {
+    fetch("/update-quiz-score", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ language: language, score: score }),
+    })
+    .then(response => response.json())
+    .then(data => {
+         console.log(data.message);
+         alert(data.message);
+    })
+    .catch(error => console.error("Error:", error));
+}

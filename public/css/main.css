@@ -4,6 +4,35 @@
     box-sizing: border-box;
 }
 
+body{
+  /* background-color: black; */
+  background-color: #272932;
+}
+
+.banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  position: sticky;
+}
+
+.banner::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/TA7.png');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  /* background-color: #272932; */
+  mask-image: url('/images/ink_lv2.gif');
+  mask-size: cover;
+  mask-position: center;
+}
+
 .total_container{
     height: 100%;
     width: 100%;
@@ -21,7 +50,7 @@
     width: 100%;
     height: 160px;
     padding-top: 40px;
-    background-color: #2b2c28;
+    background-color: #0c0c1e;
 }
 
 .clickables{

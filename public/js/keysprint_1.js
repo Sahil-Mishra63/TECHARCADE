@@ -86,6 +86,7 @@ function initTyping(){
         wpmTag.innerText = wpm;
         mistakeTag.innerText = mistakes;
         cpmTag.innerText = charIndex - mistakes;
+        saveTypingScore(wpm);
     }
     else{
         clearInterval(timer);
@@ -138,3 +139,15 @@ inpField.addEventListener("input", initTyping); // Listen for user input
 tryAgainBtn.addEventListener("click", resetGame); // Reset game on button click
 
 
+function saveTypingScore(wpm) {
+    fetch("/update-keysprint-score", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ score: wpm }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error("Error:", error));
+}

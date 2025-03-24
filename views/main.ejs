@@ -10,12 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Bungee&family=Jersey+15&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="banner">
+    </div>
     <div class="total_container">
         <div class="navbar">
             <button class="clickables btn" onclick="navigate('/keysprint_home')">SPEED TYPING</button>
             <button class="clickables btn" onclick="navigate('/quiz')">TECH QUIZ</button>
             <button class="clickables btn" onclick="navigate('/output')">GUESS THE OUTPUT</button>
-            <button class="clickables btn">OTHERS</button>
+            <div class="pficon" onclick="navigate('/profile')">
+              <img src="/images/coding.png" alt="copyright-surang" width="60px" style="border-radius: 50%; border:2px solid black; cursor:pointer;">
+              <p>profile</p>
+            </div>
         </div>
 
         <div class="game_space">
@@ -55,7 +60,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card" onclick="navigate('/quiz-home')">
+              <div class="card" onclick="navigate('/quiz')">
                 <div class="content">
                   <div class="back">
                     <div class="back-content">
@@ -91,11 +96,11 @@
                   </div>
                 </div>
               </div>
-              <div class="card" onclick="navigate('/output-home')">
+              <div class="card" onclick="navigate('/output')">
                 <div class="content">
                   <div class="back">
                     <div class="back-content">
-                      <img src="/images/OUTPUT ODYSSEY.png" alt="" width="183px">
+                      <img src="/images/OUTPUT-ODYSSEY.png" alt="" width="183px">
                       <strong>Output Odyssey</strong>
                     </div>
                   </div>

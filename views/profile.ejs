@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - TechArcade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Orbitron:wght@400..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="details">
+            <div class="navigation-card">
+                <a href="/main" class="tab">
+                  <svg
+                    class="svgIcon"
+                    viewBox="0 0 104 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M100.5 40.75V96.5H66V68.5V65H62.5H43H39.5V68.5V96.5H3.5V40.75L52 4.375L100.5 40.75Z"
+                      stroke="black"
+                      stroke-width="7"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
+            <div class="namesss">                  
+                <img src="images/coding.png" alt="">
+                <button class="Btn" >
+                    <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                    <div class="text"><a href="/logout" style="color: whitesmoke;">Logout</a></div>
+                  </button>
+                  
+            </div>
+                <div class="naa">
+                    <p>UserName: <strong><%= user.name %></strong></p>
+                    <p>Scores: </p>
+                    <h2 style="color: white; margin-left:10px;">Keysprint wpm: <%= scores.keysprint %> </h2>
+                    <div class="dropdown">
+                      <input
+                        hidden=""
+                        class="sr-only"
+                        name="state-dropdown"
+                        id="state-dropdown"
+                        type="checkbox"
+                      />
+                      <label
+                        aria-label="dropdown scrollbar"
+                        for="state-dropdown"
+                        class="trigger"
+                      ></label>
+                    
+                      <ul class="list webkit-scrollbar" role="list" dir="auto">
+                        <li class="listitem" role="listitem">
+                          <article class="article">C: <%= scores.quizcode.c %></article>
+                        </li>
+                    
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            C+++: <%= scores.quizcode.cpp %>
+                          </article>
+                        </li>
+                    
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            JAVA: <%= scores.quizcode.java %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            PYTHON: <%= scores.quizcode.python %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            JAVASCRIPT: <%= scores.quizcode.javascript %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            TYPESCRIPT: <%= scores.quizcode.typescript %>
+                          </article>
+                        </li>
+                      </ul>
+                    </div>
+                    
+                    <div class="dropdown1">
+                      <input
+                        hidden=""
+                        class="sr-only1"
+                        name="state-dropdown1"
+                        id="state-dropdown1"
+                        type="checkbox"
+                      />
+                      <label
+                        aria-label="dropdown1 scrollbar"
+                        for="state-dropdown1"
+                        class="trigger1"
+                      ></label>
+                    
+                      <ul class="list1 webkit-scrollbar" role="list" dir="auto">
+                        <li class="listitem" role="listitem">
+                          <article class="article">C: <%= scores.output.c %></article>
+                        </li>
+                    
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            C++: <%= scores.output.cpp %>
+                          </article>
+                        </li>
+                    
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            JAVA: <%= scores.output.java %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            PYTHON: <%= scores.output.python %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            JAVASCRIPT: <%= scores.output.javascript %>
+                          </article>
+                        </li>
+                        
+                        <li class="listitem" role="listitem">
+                          <article class="article">
+                            TYPESCRIPT: <%= scores.output.typescript %>
+                          </article>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="leaderboard">
+                <h1>LEADERBOARD</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

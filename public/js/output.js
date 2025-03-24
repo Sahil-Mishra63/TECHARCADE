@@ -1,127 +1,133 @@
-let currentQuestionIndex = 0;
+let currentIndex = 0;
 let currentLanguage = '';
 let score = 0;
-let timer;
-let codes = [];
+// let codes = [];
 
-const questions = {
+const languages = {
     c: [
         { code: 'printf("Hello, World!");', answer: 'Hello, World!' },
         { code: 'int a = 5;\nint b = 2;\nprintf("%d", a + b);', answer: '7' },
-        { code: 'int x = 10;\nprintf("%d", x * 2);', answer: '20' },
-        { code: 'int y = 15;\nprintf("%d", y / 3);', answer: '5' },
-        { code: 'int z = 8;\nprintf("%d", z % 3);', answer: '2' },
-        { code: 'int a = 5, b = 3;\nprintf("%d", a > b ? a : b);', answer: '5' },
-        { code: 'int i;\nfor(i = 0; i < 3; i++) {\n printf("%d", i);\n}', answer: '012' },
+        { code: 'printf("%%s", "Soft Computing");', answer: 'Soft Computing' },
+        { code: 'char str[] = "C Programming";\nprintf("%s", str);', answer: 'C Programming' },
+        { code: 'int a = 65;\nprintf("%c", a);', answer: 'A' },
         { code: 'int arr[] = {1, 2, 3};\nprintf("%d", arr[1]);', answer: '2' },
-        { code: 'int num = 5;\nif (num % 2 == 0) {\n printf("Even");\n} else {\n printf("Odd");\n}', answer: 'Odd' },
-        { code: 'int x = 5;\nint *ptr = &x;\nprintf("%d", *ptr);', answer: '5' },
-        { code: 'char str[] = "Hello";\nprintf("%c", str[1]);', answer: 'e' },
-        { code: 'int a = 10;\nint b = 20;\nint temp = a;\na = b;\nb = temp;\nprintf("%d %d", a, b);', answer: '20 10' },
+        { code: 'char arr[] = "Hello";\nprintf("%c", arr[1]);', answer: 'e' },
+        { code: 'int x = 4;\nprintf("%d", x * x);', answer: '16' },
+        { code: 'printf("%d", 10 % 3);', answer: '1' },
+        { code: 'printf("%d", 5 > 2);', answer: '1' }
     ],
     cpp: [
         { code: 'cout << "Hello, World!";', answer: 'Hello, World!' },
-        { code: 'int a = 5;\nint b = 2;\ncout << a + b;', answer: '7' },
-        { code: 'int x = 10;\ncout << x * 2;', answer: '20' },
-        { code: 'int y = 15;\ncout << y / 3;', answer: '5' },
+        { code: 'cout << "Soft Computing";', answer: 'Soft Computing' },
+        { code: 'string str = "C++ Programming";\ncout << str;', answer: 'C++ Programming' },
+        { code: 'int a = 65;\ncout << (char)a;', answer: 'A' },
         { code: 'int z = 8;\ncout << z % 3;', answer: '2' },
-        { code: 'int a = 5, b = 3;\ncout << (a > b ? a : b);', answer: '5' },
-        { code: 'for(int i = 0; i < 3; i++) {\n cout << i;\n}', answer: '012' },
-        { code: 'int arr[] = {1, 2, 3};\ncout << arr[1];', answer: '2' },
-        { code: 'int num = 5;\nif (num % 2 == 0) {\n cout << "Even";\n} else {\n cout << "Odd";\n}', answer: 'Odd' },
-        { code: 'int x = 5;\nint *ptr = &x;\ncout << *ptr;', answer: '5' },
-        { code: 'string str = "Hello";\ncout << str[1];', answer: 'e' },
-        { code: 'int a = 10;\nint b = 20;\nswap(a, b);\ncout << a << " " << b;', answer: '20 10' },
+        { code: 'char arr[] = "Hello";\ncout << arr[1];', answer: 'e' },
+        { code: 'cout << 10 % 3;', answer: '1' },
+        { code: 'int x = 4;\ncout << x * x;', answer: '16' },
+        { code: 'cout << (5 > 2);', answer: '1' },
+        { code: 'cout << 3 * 3 + 4 * 4;', answer: '25' }
     ],
     java: [
         { code: 'System.out.println("Hello, World!");', answer: 'Hello, World!' },
-        { code: 'int a = 5;\nint b = 2;\nSystem.out.println(a + b);', answer: '7' },
-        { code: 'int x = 10;\nSystem.out.println(x * 2);', answer: '20' },
-        { code: 'int y = 15;\nSystem.out.println(y / 3);', answer: '5' },
-        { code: 'int z = 8;\nSystem.out.println(z % 3);', answer: '2' },
-        { code: 'int a = 5, b = 3;\nSystem.out.println(a > b ? a : b);', answer: '5' },
+        { code: 'System.out.println("Soft Computing");', answer: 'Soft Computing' },
+        { code: 'String str = "Java Programming";\nSystem.out.println(str);', answer: 'Java Programming' },
+        { code: 'int a = 65;\nSystem.out.println((char)a);', answer: 'A' },
         { code: 'for(int i = 0; i < 3; i++) {\n System.out.print(i);\n}', answer: '012' },
-        { code: 'int[] arr = {1, 2, 3};\nSystem.out.println(arr[1]);', answer: '2' },
-        { code: 'int num = 5;\nif (num % 2 == 0) {\n System.out.println("Even");\n} else {\n System.out.println("Odd");\n}', answer: 'Odd' },
-        { code: 'String str = "Hello";\nSystem.out.println(str.charAt(1));', answer: 'e' },
-        { code: 'int a = 10;\nint b = 20;\nint temp = a;\na = b;\nb = temp;\nSystem.out.println(a + " " + b);', answer: '20 10' },
-        { code: 'List<Integer> list = new ArrayList<>();\nlist.add(1);\nlist.add(2);\nSystem.out.println(list.get(1));', answer: '2' },
+        { code: 'String arr = "Hello";\nSystem.out.println(arr.charAt(1));', answer: 'e' },
+        { code: 'System.out.println(10 % 3);', answer: '1' },
+        { code: 'int x = 4;\nSystem.out.println(x * x);', answer: '16' },
+        { code: 'System.out.println(5 > 2);', answer: 'true' },
+        { code: 'System.out.println(3 * 3 + 4 * 4);', answer: '25' }
     ],
     python: [
         { code: 'print("Hello, World!")', answer: 'Hello, World!' },
-        { code: 'a = 5\nb = 2\nprint(a + b)', answer: '7' },
-        { code: 'x = 10\nprint(x * 2)', answer: '20' },
-        { code: 'y = 15\nprint(y // 3)', answer: '5' },
-        { code: 'z = 8\nprint(z % 3)', answer: '2' },
+        { code: 'print("Soft Computing")', answer: 'Soft Computing' },
+        { code: 'str_val = "Python Programming"\nprint(str_val)', answer: 'Python Programming' },
+        { code: 'a = 65\nprint(chr(a))', answer: 'A' },
         { code: 'a = 5\nb = 3\nprint(a if a > b else b)', answer: '5' },
-        { code: 'for i in range(3):\n print(i, end="")', answer: '012' },
-        { code: 'arr = [1, 2, 3]\nprint(arr[1])', answer: '2' },
-        { code: 'num = 5\nprint("Even" if num % 2 == 0 else "Odd")', answer: 'Odd' },
-        { code: 's = "Hello"\nprint(s[1])', answer: 'e' },
-        { code: 'a = 10\nb = 20\na, b = b, a\nprint(a, b)', answer: '20 10' },
-        { code: 'lst = [1, 2, 3]\nprint(lst[-1])', answer: '3' },
+        { code: 'arr = "Hello"\nprint(arr[1])', answer: 'e' },
+        { code: 'print(10 % 3)', answer: '1' },
+        { code: 'x = 4\nprint(x * x)', answer: '16' },
+        { code: 'print(5 > 2)', answer: 'True' },
+        { code: 'print(3 * 3 + 4 * 4)', answer: '25' }
+    ],
+    javascript: [
+        { code: 'console.log("Hello, World!");', answer: 'Hello, World!' },
+        { code: 'console.log("Soft Computing");', answer: 'Soft Computing' },
+        { code: 'let str = "JavaScript Programming";\nconsole.log(str);', answer: 'JavaScript Programming' },
+        { code: 'let a = 65;\nconsole.log(String.fromCharCode(a));', answer: 'A' },
+        { code: 'let y = 15;\nconsole.log(y / 3);', answer: '5' },
+        { code: 'let arr = "Hello";\nconsole.log(arr[1]);', answer: 'e' },
+        { code: 'console.log(10 % 3);', answer: '1' },
+        { code: 'let x = 4; console.log(x * x);', answer: '16' },
+        { code: 'console.log(5 > 2);', answer: 'true' },
+        { code: 'console.log(3 * 3 + 4 * 4);', answer: '25' }
+    ],
+    typescript: [
+        { code: 'console.log("Hello, World!");', answer: 'Hello, World!' },
+        { code: 'console.log("Soft Computing");', answer: 'Soft Computing' },
+        { code: 'let str: string = "TypeScript Programming";\nconsole.log(str);', answer: 'TypeScript Programming' },
+        { code: 'let a: number = 65;\nconsole.log(String.fromCharCode(a));', answer: 'A' },
+        { code: 'let arr: string = "Hello";\nconsole.log(arr[1]);', answer: 'e' },
+        { code: 'console.log(10 % 3);', answer: '1' },
+        { code: 'let x: number = 4; console.log(x * x);', answer: '16' },
+        { code: 'console.log(5 > 2);', answer: 'true' },
+        { code: 'console.log(3 * 3 + 4 * 4);', answer: '25' },
+        { code: 'let x: number = 10;\nconsole.log(x * 2);', answer: '20' },
     ]
 };
 
-function showQuestions(category) {
-    const container = document.getElementById('questions-container');
-    container.innerHTML = '';
-    questions[category].forEach((q, index) => {
-        const questionDiv = document.createElement('div');
-        questionDiv.className = 'question';
-        questionDiv.innerHTML = `
-            <div class="question-code">${q.code}</div>
-            <input type="text" id="answer-${category}-${index}" placeholder="Enter your answer">
-            <button onclick="checkAnswer('${category}', ${index})">Check Answer</button>
-        `;
-        container.appendChild(questionDiv);
-    });
-}
 
-function selectLanguage(language){
+function loadQuestions(language){
     currentLanguage = language;
-    codes = questions[currentLanguage];
-    currentQuestionIndex = 0;
+    currentIndex = 0;
     score = 0;
+    displayQuestion();
+    document.getElementById("game-page").style.display = 'block';
 }
 
 function displayQuestion(){
+    if (currentIndex >= languages[currentLanguage].length){
+        showResult();
 
-    clearInterval(timer);
-    let timeLeft = 20;
-    document.getElementById('time').textContent = timeLeft;
+        return;
+    }
 
-    timer = setInterval(() => {
-        timeLeft--;
-        document.getElementById('time').textContent = timeLeft;
-        if(timeLeft === 0){
-            checkAnswer(-1);
-        }
-    }, 3000);
-
-    const question = codes[currentQuestionIndex];
-    document.getElementById('question-title').textContent = question.question;
-    const ans = document.getElementById('input');
+    const question = languages[currentLanguage][currentIndex];
+    document.getElementById('code-display').innerText = question.code;
+    document.getElementById('user-answer').value = "";
 }
 
-// function checkAnswer(category, index) {
-//     const userAnswer = document.getElementById(`answer-${category}-${index}`).value;
-//     const resultContainer = document.getElementById('result-container');
-//     if (userAnswer === questions[category][index].answer) {
-//         resultContainer.innerHTML = '<p style="color: green;">Correct!</p>';
-//     } else {
-//         resultContainer.innerHTML = <p style="color: red;">Incorrect! The correct answer is: ${questions[category][index].answer}</p>;
-//     }
-// }
+function checkAnswer(){
+    const userAnswer = document.getElementById("user-answer").value.trim();
+    const correctAnswer = languages[currentLanguage][currentIndex].answer;
 
-function checkAnswer(category, index) {
-    const userAnswer = document.getElementById(`answer-${category}-${index}`).value.trim();
-    const resultContainer = document.getElementById('result-container');
-    resultContainer.innerHTML = ''; // Clear previous result
-
-    if (userAnswer.toLowerCase() === questions[category][index].answer.toLowerCase()) {
-        resultContainer.innerHTML = '<p style="color: green;">Correct!</p>';
-    } else {
-        resultContainer.innerHTML = `<p style="color: red;">Incorrect! The correct answer is: ${questions[category][index].answer}</p>`;
+    if(userAnswer === correctAnswer){
+        score++;
     }
+
+    currentIndex++;
+    displayQuestion();
+}
+
+function showResult(){
+    document.getElementById("result").innerText = `Score: ${score}/${languages[currentLanguage].length}`;
+
+    saveOutputScore(currentLanguage, score);
+}
+
+
+
+function saveOutputScore(language, score) {
+    fetch("/update-output-score", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ language: language, score: score }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error("Error:", error));
 }

@@ -1,0 +1,434 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100vw;
+    /* height: 100vh; */
+    background-color: #0c0c1e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* margin-top: 20px; */
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    width: 60vw;
+    background-color: #04153b;
+    align-items: center;
+    /* justify-content: center;     */
+    gap: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.navigation-card {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 15px 20px;
+    border-radius: 50px;
+    top: 10px;
+    position: absolute;
+  }
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: rgb(252, 252, 252);
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .tab:hover {
+    background-color: rgb(227, 223, 223);
+  }
+  
+
+.namesss img{
+    width: 160px;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+.namesss{
+    margin-left: 50px;
+    margin-top: 30px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.namesss button{
+    width: 50px;
+}
+
+.Btn {
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: var(--night-rider);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: var(--af-white);
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: var(--af-white);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 5px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+.naa{
+    display: flex;
+    flex-direction: column;
+    /* font-size: 50px; */
+    margin-top: 30px;
+}
+
+.naa p{
+    font-size: 40px;
+    font-family: "Orbitron", sans-serif;
+    color: white;
+}
+
+
+
+.leaderboard{
+    width: 60vw;
+    height: 70vh;
+    background-color: #2e2e2e;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+
+.dropdown {
+  border: 1px solid #c1c2c5;
+  border-radius: 12px;
+  transition: all 300ms;
+  display: flex;
+  flex-direction: column;
+  min-height: 58px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  inset-inline: auto;
+  max-width: 298px;
+  min-width: 298px;
+}
+.dropdown input:where(:checked) ~ .list {
+  opacity: 1;
+  transform: translateY(-3rem) scale(1);
+  transition: all 500ms ease;
+  margin-top: 32px;
+  padding-top: 4px;
+  margin-bottom: -32px;
+}
+.dropdown input:where(:not(:checked)) ~ .list {
+  opacity: 0;
+  transform: translateY(3rem);
+  margin-top: -100%;
+  user-select: none;
+  height: 0px;
+  max-height: 0px;
+  min-height: 0px;
+  pointer-events: none;
+  transition: all 500ms ease-out;
+}
+.trigger {
+  cursor: pointer;
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: 600;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  gap: 1rem;
+  padding: 1rem;
+  height: max-content;
+  position: relative;
+  z-index: 99;
+  border-radius: inherit;
+  background-color: white;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.dropdown input:where(:checked) + .trigger {
+  margin-bottom: 1rem;
+}
+.dropdown input:where(:checked) + .trigger:before {
+  rotate: 90deg;
+  transition-delay: 0ms;
+}
+.dropdown input:where(:checked) + .trigger::after {
+  content: "Close";
+}
+
+.trigger:before,
+.trigger::after {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trigger:before {
+  content: "›";
+  rotate: -90deg;
+  width: 17px;
+  height: 17px;
+  color: #262626;
+  border-radius: 2px;
+  font-size: 26px;
+  transition: all 350ms ease;
+  transition-delay: 85ms;
+}
+.trigger::after {
+  content: "QUIZ CODE QUEST - SCORES";
+}
+.list {
+  height: 100%;
+  max-height: 20rem;
+  width: calc(100% - calc(var(--w-scrollbar) / 2));
+  display: grid;
+  grid-auto-flow: row;
+  overflow: hidden auto;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-right: -8px;
+  --w-scrollbar: 8px;
+}
+.listitem {
+  height: 100%;
+  width: calc(100% + calc(calc(var(--w-scrollbar) / 2) + var(--w-scrollbar)));
+  list-style: none;
+}
+.article {
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: justify;
+  width: 100%;
+  border: 1px solid #c1c2c5;
+  display: inline-block;
+  background-color: white;
+}
+
+.webkit-scrollbar::-webkit-scrollbar {
+  width: var(--w-scrollbar);
+  height: var(--w-scrollbar);
+  border-radius: 9999px;
+}
+.webkit-scrollbar::-webkit-scrollbar-track {
+  background: #0000;
+}
+.webkit-scrollbar::-webkit-scrollbar-thumb {
+  background: #0000;
+  border-radius: 9999px;
+}
+.webkit-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: #c1c2c5;
+}
+
+
+.trigger1 {
+  cursor: pointer;
+  list-style: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: 600;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  gap: 1rem;
+  padding: 1rem;
+  height: max-content;
+  position: relative;
+  z-index: 99;
+  border-radius: inherit;
+  background-color: white;
+}
+
+.dropdown1 input:where(:checked) + .trigger1 {
+  margin-bottom: 1rem;
+}
+.dropdown1 input:where(:checked) + .trigger1:before {
+  rotate: 90deg;
+  transition-delay: 0ms;
+}
+.dropdown1 input:where(:checked) + .trigger1::after {
+  content: "Close";
+}
+
+.trigger1:before,
+.trigger1::after {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.trigger1:before {
+  content: "›";
+  rotate: -90deg;
+  width: 17px;
+  height: 17px;
+  color: #262626;
+  border-radius: 2px;
+  font-size: 26px;
+  transition: all 350ms ease;
+  transition-delay: 85ms;
+}
+.trigger1::after {
+  content: "OUTPUT ODYSSEY - SCORES";
+}
+
+.dropdown1 {
+  border: 1px solid #c1c2c5;
+  border-radius: 12px;
+  transition: all 300ms;
+  display: flex;
+  flex-direction: column;
+  min-height: 58px;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  inset-inline: auto;
+  max-width: 298px;
+  min-width: 298px;
+}
+.dropdown1 input:where(:checked) ~ .list1 {
+  opacity: 1;
+  transform: translateY(-3rem) scale(1);
+  transition: all 500ms ease;
+  margin-top: 32px;
+  padding-top: 4px;
+  margin-bottom: -32px;
+}
+.dropdown1 input:where(:not(:checked)) ~ .list1 {
+  opacity: 0;
+  transform: translateY(3rem);
+  margin-top: -100%;
+  user-select: none;
+  height: 0px;
+  max-height: 0px;
+  min-height: 0px;
+  pointer-events: none;
+  transition: all 500ms ease-out;
+}
+
+.sr-only1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+.dropdown1 input:where(:checked) + .trigger1 {
+  margin-bottom: 1rem;
+}
+.dropdown1 input:where(:checked) + .trigger1:before {
+  rotate: 90deg;
+  transition-delay: 0ms;
+}
+.dropdown1 input:where(:checked) + .trigger1::after {
+  content: "Close";
+}
